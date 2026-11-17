@@ -24,3 +24,24 @@ public class GameManager : MonoBehaviour
         Instantiate(enemyOnePrefab, new Vector3(Random.Range(-9f, 9f), 6.5f, 0), Quaternion.identity);
     }
 }
+
+    public GameObject EnemyTwo;
+
+    // Start is called before the first frame update
+    void Start()
+{
+    InvokeRepeating("CreateEnemyTwo", 0, 0.5f);
+}
+
+// Update is called once per frame
+void Update()
+{
+
+}
+
+void CreateEnemyTwo()
+{
+    Instantiate(enemyTwo, new Vector3(Random.Range(-9f, 9f), 6.5f, 0), Quaternion.identity);
+}
+
+}
