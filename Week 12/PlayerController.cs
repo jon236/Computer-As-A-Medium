@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bulletPrefab;
     public GameObject explosionPrefab;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public void LoseALife()
     {
+       
         //lives = lives - 1;
         //lives -= 1;
         lives--;
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
+   
     void Shooting()
     {
         if(Input.GetKeyDown(KeyCode.Space))

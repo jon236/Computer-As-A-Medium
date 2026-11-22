@@ -5,24 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class Coin : MonoBehaviour
 {
-    public int scoreValue = 5;
-    void OnTriggerEnter2D(Collider2D other)
+    private GameManager gm;
+
+    void Start()
     {
-        if (other.CompareTag("PlayerController"))
+        // Find the class GameManager, not the method AddScore
+        gm = FindObjectOfType<GameManager>();
+       
+    }
+
+    void OnTriggerEnter2D(Collider2D other)   
+    {
+        if (other.CompareTag("Player"))
         {
-            AddScore sm = FindObjectOfType<AddScore>();
-            sm.AddScore(scoreValue);
+            gm.AddScore(1);       // call the method on the variable
             Destroy(gameObject);
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
-    // Update is called once per frame
-    void Update()
+// Update is called once per frame
+void Update()
     {
 
     }

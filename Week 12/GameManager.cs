@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int earnedScore)
     {
         score = score + earnedScore;
-        Debug.Log("Score:" + score);
+        Debug.Log("Score: " + score);
     }
 
     public void ChangeLivesText (int currentLives)
